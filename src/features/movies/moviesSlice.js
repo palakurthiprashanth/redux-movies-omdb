@@ -10,10 +10,9 @@ const initialState = {
 
 export const fetchAsyncMovies = createAsyncThunk(
   'Movies/fetchAsyncMovies',
-  async () => {
-    const movieText = 'Harry';
+  async (term) => {
     const response = await MovieApi.get(
-      `?apiKey=${APIKEY}&s=${movieText}&type=movie`
+      `?apiKey=${APIKEY}&s=${term}&type=movie`
     ).catch((err) => {
       console.log(err);
     });
@@ -23,10 +22,9 @@ export const fetchAsyncMovies = createAsyncThunk(
 
 export const fetchAsyncShows = createAsyncThunk(
   'Movies/fetchAsyncShows',
-  async () => {
-    const seriesText = 'Harry';
+  async (term) => {
     const response = await MovieApi.get(
-      `?apiKey=${APIKEY}&s=${seriesText}&type=series`
+      `?apiKey=${APIKEY}&s=${term}&type=series`
     ).catch((err) => {
       console.log(err);
     });
