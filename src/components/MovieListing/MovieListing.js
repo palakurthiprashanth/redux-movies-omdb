@@ -9,7 +9,7 @@ const MovieListing = () => {
   var renderMovies = '';
   renderMovies =
     movies.Response === 'True' ? (
-      movies.movies.Search.map((movie, index) => (
+      movies.Search.map((movie, index) => (
         <MovieCard key={index} data={movie} />
       ))
     ) : (

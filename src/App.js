@@ -11,13 +11,15 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <div className="container">
+        <div>
           <Header></Header>
-          <Switch>
-            <Route exact path="/" exact component={Home} />
-            <Route path="/movie/:imdbID" component={MovieDetail} />
-            <Route component={PageNotFound} />
-          </Switch>
+          <div className="container">
+            <Switch>
+              <Route exact path="/" exact component={Home} />
+              <Route path="/movie/:imdbID" component={MovieDetail} />
+              <Route component={PageNotFound} />
+            </Switch>
+          </div>
           <Footer />
         </div>
       </BrowserRouter>

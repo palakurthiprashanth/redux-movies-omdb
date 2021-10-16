@@ -15,21 +15,6 @@ export const fetchAsyncMovies = createAsyncThunk(
     ).catch((err) => {
       console.log(err);
     });
-    // console.log('Response :::' + response);
-    return response.data;
-  }
-);
-
-export const fetchAsyncShows = createAsyncThunk(
-  'Movies/fetchAsyncMovies',
-  async () => {
-    const seriesText = 'Harry';
-    const response = await MovieApi.get(
-      `?apiKey=${APIKEY}&s=${seriesText}&type=series`
-    ).catch((err) => {
-      console.log(err);
-    });
-    // console.log('Response :::' + response);
     return response.data;
   }
 );
@@ -51,7 +36,7 @@ const MovieSlice = createSlice({
         return { ...state, movies: payload };
       })
       .addCase(fetchAsyncMovies.rejected, (state, { payload }) => {
-        console.log('Rejected...');
+        console.log('rejected');
       });
   },
 });
